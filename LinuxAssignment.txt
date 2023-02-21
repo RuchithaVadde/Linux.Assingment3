@@ -1,0 +1,18 @@
+1)Print the lines having greater than 30 char in File1.txt
+
+awk 'length>30' file1.txt
+
+grep '.\{31,\}'> file1.txt
+
+2)Remove the lines having greater than 30 char and store it in File2.txt
+
+awk 'length($0)>'file2.txt
+
+grep -vE '^.{31,}$' >file2.txt
+
+3)Check and Remove the Dot (.) or EndPeriod if it is in the end of the line and store it in File3.txt 
+
+we can use the 'sed' command in linux to remove the period at the end of each line in a fileand store the modified lines in a new file.
+
+sed 's/\.$// 'file1.txt > file3.txt
+
